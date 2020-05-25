@@ -1,0 +1,115 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'com.jakewharton.butterknife'
+apply plugin: "androidx.navigation.safeargs.kotlin"
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    dataBinding {
+        enabled = true
+    }
+    kapt {
+        correctErrorTypes = true
+        generateStubs = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            def flavor = variant.name
+            def versionName = variant.versionName
+            outputFileName = "app_${flavor}_${versionName}.apk"
+        }
+    }
+    flavorDimensions "stage"
+    productFlavors {
+        production {
+            applicationId "com.wiwat.template"
+            buildConfigField("String", "BASE_URL", "\"http://www.template.com/\"")
+        }
+
+        staging {
+            applicationId "com.wiwat.template.staging"
+            buildConfigField("String", "BASE_URL", "\"http://www.template.com/\"")
+        }
+    }
+
+    androidExtensions {
+        experimental = true
+    }
+}
+
+dependencies {
+    kapt(
+            "androidx.lifecycle:lifecycle-compiler:$arch_component_version",
+            "com.github.bumptech.glide:compiler:$glide_version",
+            "com.airbnb.android:epoxy-processor:$epoxy_version"
+    )
+    implementation(
+            fileTree(dir: 'libs', include: ['*.jar']),
+            "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
+            "androidx.appcompat:appcompat:$appcompat_version",
+            "androidx.core:core-ktx:$ktx_version",
+            "com.google.android.material:material:$android_material",
+            "androidx.constraintlayout:constraintlayout:$constrain_layout_version",
+            "androidx.lifecycle:lifecycle-extensions:$arch_component_version",
+            "androidx.lifecycle:lifecycle-common-java8:$arch_component_version",
+            "androidx.lifecycle:lifecycle-runtime:$arch_component_version",
+            "androidx.lifecycle:lifecycle-viewmodel-ktx:$arch_component_version",
+            "com.github.bumptech.glide:glide:$glide_version",
+            "org.koin:koin-core:$koin_version",
+            "org.koin:koin-android:$koin_version",
+            "org.koin:koin-androidx-viewmodel:$koin_version",
+            "org.koin:koin-androidx-scope:$koin_version",
+            "org.koin:koin-androidx-ext:$koin_version",
+            "org.koin:koin-test:$koin_version",
+            'io.github.inflationx:calligraphy3:3.1.1',
+            'io.github.inflationx:viewpump:2.0.3',
+            "com.airbnb.android:epoxy:$epoxy_version",
+            "com.airbnb.android:epoxy-databinding:$epoxy_version",
+            "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutine_version",
+            "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_version",
+            "com.orhanobut:hawk:$hawk_version",
+            "com.airbnb.android:lottie:$lottieVersion",
+            "com.github.tbruyelle:rxpermissions:0.10.2",
+            'com.journeyapps:zxing-android-embedded:4.1.0'
+
+    )
+    api(
+            "com.squareup.retrofit2:retrofit:$retrofit_version",
+            "com.squareup.retrofit2:converter-gson:$retrofit_version",
+            "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version",
+            "com.google.code.gson:gson:$gson_version",
+            "com.squareup.okhttp3:okhttp:$okhttp_version",
+            "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+    )
+    testImplementation(
+            "junit:junit:$junit_version"
+    )
+    androidTestImplementation(
+            "androidx.test:runner:$runner_version",
+            "androidx.test.espresso:espresso-core:$espresso_version"
+    )
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.0-beta01'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.0-beta01'
+}
