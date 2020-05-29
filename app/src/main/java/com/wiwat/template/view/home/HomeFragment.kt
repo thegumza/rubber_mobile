@@ -24,17 +24,35 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>() {
         binding.textUsername.text = "สวัสดี ทดสอบ"
         binding.recyclerView.withModels {
             menuItem {
-                id(0).icon(
+                id("setting").icon(
+                    ContextCompat.getDrawable(
+                        context as Activity,
+                        R.drawable.ic_edit
+                    )
+                )
+                    .name("ป้อนราคาน้ำยางวันนี้")
+                    .onClick { _ -> findNavController().navigate(R.id.action_homeFragment_to_addPriceFragment) }
+            }
+            menuItem {
+                id("search").icon(
                     ContextCompat.getDrawable(
                         context as Activity,
                         R.drawable.ic_search
                     )
-                ).name("ค้นหาสินค้า")
+                ).name("ค้นหาสมาชิก")
+                    .onClick { _ -> findNavController().navigate(R.id.action_homeFragment_to_searchFragment) }
             }
             menuItem {
-                id(1).icon(ContextCompat.getDrawable(context as Activity, R.drawable.ic_add))
-                    .name("เพิ่มสินค้า").onClick { _ -> findNavController().navigate(R.id.action_homeFragment_to_registerFragment)}
+                id("add").icon(
+                    ContextCompat.getDrawable(
+                        context as Activity,
+                        R.drawable.ic_customer
+                    )
+                )
+                    .name("เพิ่มสมาชิก")
+                    .onClick { _ -> findNavController().navigate(R.id.action_homeFragment_to_registerFragment) }
             }
+
         }
         binding.cardBottom.setOnClickListener {
             val integrator = IntentIntegrator.forSupportFragment(this)

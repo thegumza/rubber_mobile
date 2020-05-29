@@ -26,14 +26,14 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="@dimen/keyline_4">
+                android:layout_margin="@dimen/keyline_2">
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="โปรแกรมเช็คสต็อกสินค้า"
+                    android:text="@string/title_app_name"
                     android:textColor="@color/color_on_primary"
                     android:textSize="@dimen/text_size_20"
                     app:fontPath="@string/font_medium"
@@ -99,8 +99,8 @@
 
                 <com.airbnb.lottie.LottieAnimationView
                     android:id="@+id/animation_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="@dimen/keyline_2"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -114,9 +114,10 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/keyline_4"
+                    android:layout_marginStart="@dimen/keyline_4"
+                    android:layout_marginEnd="@dimen/keyline_4"
                     android:gravity="center"
-                    android:text="สแกน Barcode"
+                    android:text="สแกน QR Code"
                     android:textColor="@color/color_on_primary"
                     android:textSize="@dimen/text_size_20"
                     app:fontPath="@string/font_medium"

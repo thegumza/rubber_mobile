@@ -6,26 +6,54 @@
     app:startDestination="@id/loginFragment">
 
     <fragment
-        tools:layout="@layout/fragment_login"
         android:id="@+id/loginFragment"
         android:name="com.wiwat.template.view.login.LoginFragment"
-        android:label="LoginFragment" >
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
     <fragment
-        tools:layout="@layout/fragment_home"
         android:id="@+id/homeFragment"
         android:name="com.wiwat.template.view.home.HomeFragment"
-        android:label="HomeFragment" >
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_addPriceFragment"
+            app:destination="@id/addPriceFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
     </fragment>
     <fragment
-        tools:layout="@layout/fragment_register"
         android:id="@+id/registerFragment"
         android:name="com.wiwat.template.view.add.RegisterFragment"
-        android:label="RegisterFragment" />
+        android:label="RegisterFragment"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_registerFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/home"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPriceFragment"
+        android:name="com.wiwat.template.view.add.AddPriceFragment"
+        android:label="AddPriceFragment"
+        tools:layout="@layout/fragment_add_price">
+        <action
+            android:id="@+id/action_addPriceFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/home"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.wiwat.template.view.search.SearchFragment"
+        android:label="SearchFragment"
+        tools:layout="@layout/fragment_search" />
 </navigation>

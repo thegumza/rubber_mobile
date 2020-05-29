@@ -18,25 +18,37 @@
             android:layout_height="match_parent"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
-            android:src="@drawable/copier_17310_1280"
-            android:tint="#CC000000" />
+            android:src="@drawable/bg_green_leaf" />
 
         <com.google.android.material.card.MaterialCardView
+            android:backgroundTint="#CCFFFFFF"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/keyline_4"
-            app:cardBackgroundColor="@color/color_primary"
+            app:cardBackgroundColor="@color/color_on_primary"
             app:cardCornerRadius="@dimen/keyline_5"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.3">
+            app:layout_constraintVertical_bias="0.2">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/TextAppearance.MaterialComponents.Headline5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/keyline_4"
+                    android:layout_marginTop="@dimen/keyline_5"
+                    android:layout_marginEnd="@dimen/keyline_4"
+                    android:gravity="center"
+                    android:text="@string/title_app_name"
+                    android:textColor="@color/color_primary"
+                    app:fontPath="@string/font_medium" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_id_card"
@@ -46,7 +58,7 @@
                     android:layout_marginTop="@dimen/keyline_5"
                     android:layout_marginEnd="@dimen/keyline_4"
                     android:text="@string/username"
-                    android:textColor="@color/color_on_primary"
+                    android:textColor="@color/color_primary"
                     android:textSize="@dimen/text_size_14"
                     app:fontPath="@string/font_medium" />
 
@@ -64,9 +76,9 @@
                     app:boxCornerRadiusBottomStart="@dimen/keyline_4"
                     app:boxCornerRadiusTopEnd="@dimen/keyline_4"
                     app:boxCornerRadiusTopStart="@dimen/keyline_4"
-                    app:boxStrokeColor="@color/color_on_primary"
+                    app:boxStrokeColor="@color/color_primary"
                     app:hintEnabled="false"
-                    app:hintTextColor="@color/color_on_primary"
+                    app:hintTextColor="@color/color_primary"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent">
 
@@ -91,7 +103,7 @@
                     android:layout_marginEnd="@dimen/keyline_4"
                     android:layout_marginBottom="@dimen/keyline_2"
                     android:text="@string/password"
-                    android:textColor="@color/color_on_primary"
+                    android:textColor="@color/color_primary"
                     android:textSize="@dimen/text_size_14"
                     app:fontPath="@string/font_medium" />
 
@@ -109,7 +121,7 @@
                     app:boxCornerRadiusBottomStart="@dimen/keyline_4"
                     app:boxCornerRadiusTopEnd="@dimen/keyline_4"
                     app:boxCornerRadiusTopStart="@dimen/keyline_4"
-                    app:boxStrokeColor="@color/color_on_primary"
+                    app:boxStrokeColor="@color/color_primary"
                     app:hintEnabled="false">
 
                     <com.google.android.material.textfield.TextInputEditText

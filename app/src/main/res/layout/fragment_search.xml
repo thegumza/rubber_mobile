@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.wiwat.template.view.base.BaseViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_on_primary">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="@dimen/keyline_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearance="@style/ShapeAppearanceOverlay.MaterialCardView.CutDown">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/keyline_4">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/title"
+                    style="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/keyline_4"
+                    android:layout_marginEnd="@dimen/keyline_4"
+                    android:gravity="center"
+                    android:text="@string/title_search"
+                    android:textColor="@color/color_on_primary"
+                    app:fontPath="@string/font_medium"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/meterLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/keyline_4"
+                    android:layout_marginTop="@dimen/keyline_2"
+                    android:layout_marginEnd="@dimen/keyline_4"
+                    android:layout_marginBottom="@dimen/keyline_2"
+                    android:layout_weight="1"
+                    app:boxBackgroundColor="@color/color_on_primary"
+                    app:boxCornerRadiusBottomEnd="@dimen/keyline_4"
+                    app:boxCornerRadiusBottomStart="@dimen/keyline_4"
+                    app:boxCornerRadiusTopEnd="@dimen/keyline_4"
+                    app:boxCornerRadiusTopStart="@dimen/keyline_4"
+                    app:boxStrokeColor="@color/color_primary"
+                    app:hintEnabled="false"
+                    app:hintTextColor="@color/color_primary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/title">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_text"
+                        style="@style/TextAppearance.MaterialComponents.Body1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:hint=""
+                        android:inputType="numberDecimal"
+                        android:singleLine="true"
+                        android:textColor="@color/color_on_background"
+                        app:fontPath="@string/font_medium" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/keyline_4"
+            app:cardBackgroundColor="@color/color_on_primary"
+            app:cardElevation="@dimen/keyline_2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_top"
+            app:shapeAppearance="@style/ShapeAppearanceOverlay.MaterialCardView.CutTop">
+
+            <com.airbnb.epoxy.EpoxyRecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/keyline_2" />
+
+
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

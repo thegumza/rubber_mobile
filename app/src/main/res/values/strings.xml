@@ -15,7 +15,7 @@
 -->
 
 <resources>
-    <string name="app_name">template</string>
+    <string name="app_name">โปรแกรมรับซื้อน้ำยางพารา</string>
     <string name="font_medium">font/NotoSansThaiUI-Bold.ttf</string>
     <string name="theme_name_hint">Theme name...</string>
 
@@ -126,4 +126,14 @@
     <string name="title_remark">หมายเหตุ</string>
     <string name="title_grade">เกรด</string>
     <string name="title_meter">มิเตอร์</string>
+    <string name="title_app_name">โปรแกรมรับซื้อน้ำยางพารา</string>
+    <string name="last_price">ราคาปัจจุบัน</string>
+    <string name="current_price">ราคาใหม่</string>
+    <string name="add_price">ป้อนราคาน้ำยางวันนี้</string>
+    <string name="profile">ข้อมูลสมาชิก</string>
+    <string name="title_name">ชื่อ - สกุล</string>
+    <string name="title_phone">เบอร์โทรศัพท์</string>
+    <string name="title_address">ที่อยู่</string>
+    <string name="title_add_member">เพิ่มสมาชิก</string>
+    <string name="title_search">ค้นหาสมาชิก</string>
 </resources>

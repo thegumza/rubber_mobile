@@ -44,12 +44,12 @@ android {
     flavorDimensions "stage"
     productFlavors {
         production {
-            applicationId "com.wiwat.template"
+            applicationId "com.wiwat.rubber"
             buildConfigField("String", "BASE_URL", "\"http://www.template.com/\"")
         }
 
         staging {
-            applicationId "com.wiwat.template.staging"
+            applicationId "com.wiwat.rubber.staging"
             buildConfigField("String", "BASE_URL", "\"http://www.template.com/\"")
         }
     }
