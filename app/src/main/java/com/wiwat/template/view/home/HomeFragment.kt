@@ -30,7 +30,7 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>() {
                         R.drawable.ic_edit
                     )
                 )
-                    .name("ป้อนราคาน้ำยางวันนี้")
+                    .name("ราคาน้ำยางวันนี้")
                     .onClick { _ -> findNavController().navigate(R.id.action_homeFragment_to_addPriceFragment) }
             }
             menuItem {

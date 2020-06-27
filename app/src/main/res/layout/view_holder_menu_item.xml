@@ -22,26 +22,40 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/keyline_4"
+        android:layout_marginStart="@dimen/keyline_4"
+        android:layout_marginTop="@dimen/keyline_2"
+        android:layout_marginEnd="@dimen/keyline_4"
+        android:layout_marginBottom="@dimen/keyline_2"
         android:onClick="@{onClick}"
         app:cardBackgroundColor="@color/color_on_primary"
         app:cardCornerRadius="@dimen/keyline_4"
-        app:cardElevation="@dimen/keyline_4">
+        app:cardElevation="@dimen/keyline_2">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <ImageView
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:layout_gravity="center"
-                android:layout_margin="@dimen/keyline_4"
-                android:src="@{icon}"
+            <com.google.android.material.card.MaterialCardView
+                app:cardCornerRadius="@dimen/keyline_4"
+                app:cardElevation="@dimen/keyline_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/keyline_2"
+                app:cardBackgroundColor="@color/color_on_primary"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/text_title"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:tint="@color/color_primary"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/keyline_4"
+                    android:src="@{icon}" />
+            </com.google.android.material.card.MaterialCardView>
+
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/text_title"
@@ -53,7 +67,6 @@
                 android:layout_marginEnd="@dimen/keyline_2"
                 android:text="@{name}"
                 android:textColor="@color/color_on_background"
-                android:textSize="@dimen/text_size_20"
                 app:fontPath="@string/font_medium"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

@@ -30,12 +30,14 @@
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_title"
+                    style="@style/TextAppearance.MaterialComponents.Body1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
+                    android:layout_marginStart="@dimen/keyline_4"
+                    android:layout_marginEnd="@dimen/keyline_4"
+                    android:gravity="start"
                     android:text="@string/title_app_name"
                     android:textColor="@color/color_on_primary"
-                    android:textSize="@dimen/text_size_20"
                     app:fontPath="@string/font_medium"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -43,12 +45,14 @@
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_username"
+                    style="@style/TextAppearance.MaterialComponents.Body1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/keyline_4"
                     android:layout_marginTop="@dimen/keyline_2"
-                    android:gravity="center"
+                    android:layout_marginEnd="@dimen/keyline_4"
+                    android:gravity="start"
                     android:textColor="@color/color_on_primary"
-                    android:textSize="@dimen/text_size_20"
                     app:fontPath="@string/font_medium"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -57,16 +61,6 @@
 
                 </com.google.android.material.textview.MaterialTextView>
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/button_login"
-                    style="@style/positionButton"
-                    android:layout_marginStart="@dimen/keyline_4"
-                    android:layout_marginTop="@dimen/keyline_2"
-                    android:layout_marginEnd="@dimen/keyline_4"
-                    android:text="@string/logout"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/text_username" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -99,8 +93,8 @@
 
                 <com.airbnb.lottie.LottieAnimationView
                     android:id="@+id/animation_view"
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="@dimen/keyline_2"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -112,6 +106,7 @@
                     app:lottie_loop="true" />
 
                 <com.google.android.material.textview.MaterialTextView
+                    style="@style/TextAppearance.MaterialComponents.Body1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/keyline_4"
@@ -119,7 +114,6 @@
                     android:gravity="center"
                     android:text="สแกน QR Code"
                     android:textColor="@color/color_on_primary"
-                    android:textSize="@dimen/text_size_20"
                     app:fontPath="@string/font_medium"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
