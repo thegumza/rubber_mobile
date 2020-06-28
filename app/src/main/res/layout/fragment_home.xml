@@ -11,58 +11,35 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
+        android:background="@color/color_primary"
         android:layout_height="match_parent">
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_top"
-            android:layout_width="match_parent"
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/title"
+            style="@style/TextAppearance.MaterialComponents.Headline5"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:cardElevation="@dimen/keyline_2"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="@dimen/keyline_5"
+            android:gravity="center"
+            android:text="โปรแกรมรับซื้อน้ำยางพารา"
+            android:textColor="@color/color_on_primary"
+            app:fontPath="@string/font_medium"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:shapeAppearance="@style/ShapeAppearanceOverlay.MaterialCardView.CutDown">
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="@dimen/keyline_2">
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/text_title"
-                    style="@style/TextAppearance.MaterialComponents.Body1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/keyline_4"
-                    android:layout_marginEnd="@dimen/keyline_4"
-                    android:gravity="start"
-                    android:text="@string/title_app_name"
-                    android:textColor="@color/color_on_primary"
-                    app:fontPath="@string/font_medium"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/text_username"
-                    style="@style/TextAppearance.MaterialComponents.Body1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/keyline_4"
-                    android:layout_marginTop="@dimen/keyline_2"
-                    android:layout_marginEnd="@dimen/keyline_4"
-                    android:gravity="start"
-                    android:textColor="@color/color_on_primary"
-                    app:fontPath="@string/font_medium"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/text_title"
-                    tools:text="สวัสดี">
-
-                </com.google.android.material.textview.MaterialTextView>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/title_date"
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/keyline_5"
+            android:layout_marginEnd="@dimen/keyline_5"
+            android:gravity="center"
+            android:text="สวัสดี วิวัฒน์ ฟองการ"
+            android:textColor="@color/color_on_primary"
+            app:fontPath="@string/font_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title" />
 
         <com.airbnb.epoxy.EpoxyRecyclerView
             android:id="@+id/recycler_view"
@@ -72,54 +49,39 @@
             app:layout_constraintBottom_toTopOf="@id/card_bottom"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card_top" />
+            app:layout_constraintTop_toBottomOf="@+id/title_date" />
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card_bottom"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="@dimen/keyline_4"
-            app:cardBackgroundColor="@color/color_primary"
-            app:cardElevation="@dimen/keyline_2"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/keyline_4"
+            android:elevation="@dimen/keyline_4"
+            app:cardCornerRadius="@dimen/keyline_4"
+            app:cardElevation="@dimen/keyline_4"
+            app:cardBackgroundColor="@color/color_on_primary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:shapeAppearance="@style/ShapeAppearanceOverlay.MaterialCardView.CutTop">
+            app:layout_constraintStart_toStartOf="parent">
 
-            <LinearLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <com.airbnb.lottie.LottieAnimationView
-                    android:id="@+id/animation_view"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="@dimen/keyline_2"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:lottie_autoPlay="true"
-                    app:lottie_fileName="lf30_editor_NMTqWa.json"
-                    app:lottie_loop="true" />
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/keyline_4">
 
                 <com.google.android.material.textview.MaterialTextView
-                    style="@style/TextAppearance.MaterialComponents.Body1"
-                    android:layout_width="match_parent"
+                    style="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/keyline_4"
-                    android:layout_marginEnd="@dimen/keyline_4"
+                    android:drawablePadding="@dimen/keyline_2"
                     android:gravity="center"
                     android:text="สแกน QR Code"
-                    android:textColor="@color/color_on_primary"
+                    android:textColor="@color/color_text_dark"
                     app:fontPath="@string/font_medium"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/text_title" />
-            </LinearLayout>
-
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

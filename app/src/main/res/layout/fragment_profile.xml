@@ -16,14 +16,15 @@
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/title"
-            style="@style/TextAppearance.MaterialComponents.Headline5"
+            style="@style/TextAppearance.MaterialComponents.Headline6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/keyline_5"
             android:gravity="center"
-            android:text="เพิ่มสมาชิก"
+            android:text="ข้อมูลสมาชิก"
             android:textColor="@color/color_on_primary"
             app:fontPath="@string/font_medium"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -182,17 +183,14 @@
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_bottom"
+            android:id="@+id/button_submit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/keyline_4"
-            android:elevation="@dimen/keyline_4"
-            app:cardCornerRadius="@dimen/keyline_4"
             app:cardElevation="@dimen/keyline_4"
-            app:cardBackgroundColor="@color/color_primary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:shapeAppearance="@style/ShapeAppearanceOverlay.MaterialCardView.CutTop">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -200,13 +198,12 @@
                 android:layout_margin="@dimen/keyline_4">
 
                 <com.google.android.material.textview.MaterialTextView
-                    style="@style/TextAppearance.MaterialComponents.Body1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:drawablePadding="@dimen/keyline_2"
                     android:gravity="center"
-                    android:text="เพิ่มสมาชิก"
+                    android:text="@string/title_add_member"
                     android:textColor="@color/color_on_primary"
+                    android:textSize="@dimen/text_size_20"
                     app:fontPath="@string/font_medium"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

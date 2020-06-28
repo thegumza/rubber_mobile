@@ -29,7 +29,7 @@ class LoginFragment : BindingFragment<FragmentLoginBinding>() {
                 is Failed -> showError(state.error)
             }
         })
-        binding.buttonLogin.setOnClickListener {
+        binding.cardLogin.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
         }
     }

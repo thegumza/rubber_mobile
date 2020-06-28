@@ -12,23 +12,35 @@
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/color_on_primary">
+        android:background="@color/color_primary">
 
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/title"
-            style="@style/TextAppearance.MaterialComponents.Body1"
+            style="@style/TextAppearance.MaterialComponents.Headline5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/keyline_5"
-            android:drawablePadding="@dimen/keyline_2"
             android:gravity="center"
-            android:text="ราคาน้ำยางวันนี้"
-            android:textColor="@color/color_on_background"
+            android:text="ราคาน้ำยาง"
+            android:textColor="@color/color_on_primary"
             app:fontPath="@string/font_medium"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/title_date"
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/keyline_5"
+            android:layout_marginEnd="@dimen/keyline_5"
+            android:gravity="center"
+            android:text="ประจำวันที่ 26 มิ.ย. 2563"
+            android:textColor="@color/color_on_primary"
+            app:fontPath="@string/font_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title" />
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
@@ -37,9 +49,8 @@
             app:cardBackgroundColor="@color/color_on_primary"
             app:cardElevation="@dimen/keyline_2"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title"
+            app:layout_constraintTop_toBottomOf="@+id/title_date"
             app:shapeAppearance="@style/ShapeAppearanceOverlay.MaterialCardView.CutTop">
 
             <androidx.core.widget.NestedScrollView
@@ -63,7 +74,7 @@
                             android:layout_weight="1"
                             app:cardBackgroundColor="@color/color_on_primary"
                             app:cardCornerRadius="@dimen/keyline_4"
-                            app:cardElevation="@dimen/keyline_2">
+                            app:cardElevation="@dimen/keyline_1">
 
 
                             <LinearLayout
@@ -208,7 +219,7 @@
                             android:layout_weight="1"
                             app:cardBackgroundColor="@color/color_on_primary"
                             app:cardCornerRadius="@dimen/keyline_4"
-                            app:cardElevation="@dimen/keyline_2">
+                            app:cardElevation="@dimen/keyline_1">
 
 
                             <LinearLayout
@@ -353,7 +364,7 @@
                             android:layout_weight="1"
                             app:cardBackgroundColor="@color/color_on_primary"
                             app:cardCornerRadius="@dimen/keyline_4"
-                            app:cardElevation="@dimen/keyline_2">
+                            app:cardElevation="@dimen/keyline_1">
 
 
                             <LinearLayout
@@ -498,7 +509,7 @@
                             android:layout_weight="1"
                             app:cardBackgroundColor="@color/color_on_primary"
                             app:cardCornerRadius="@dimen/keyline_4"
-                            app:cardElevation="@dimen/keyline_2">
+                            app:cardElevation="@dimen/keyline_1">
 
 
                             <LinearLayout
@@ -643,7 +654,7 @@
                             android:layout_weight="1"
                             app:cardBackgroundColor="@color/color_on_primary"
                             app:cardCornerRadius="@dimen/keyline_4"
-                            app:cardElevation="@dimen/keyline_2">
+                            app:cardElevation="@dimen/keyline_1">
 
 
                             <LinearLayout
@@ -784,11 +795,13 @@
             android:id="@+id/card_bottom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/keyline_4"
+            android:elevation="@dimen/keyline_4"
+            app:cardCornerRadius="@dimen/keyline_4"
             app:cardElevation="@dimen/keyline_4"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:shapeAppearance="@style/ShapeAppearanceOverlay.MaterialCardView.CutTop">
+            app:layout_constraintStart_toStartOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"

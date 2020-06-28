@@ -21,7 +21,6 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.textUsername.text = "สวัสดี ทดสอบ"
         binding.recyclerView.withModels {
             menuItem {
                 id("setting").icon(

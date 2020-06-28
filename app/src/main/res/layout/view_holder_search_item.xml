@@ -29,34 +29,48 @@
         app:cardElevation="@dimen/keyline_1">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:padding="@dimen/keyline_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="@dimen/keyline_2">
 
-            <ImageView
-                android:src="@drawable/ic_member"
-                android:id="@+id/image"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_gravity="center"
-                android:layout_margin="@dimen/keyline_4"
+            <com.google.android.material.card.MaterialCardView
+                android:layout_margin="@dimen/keyline_1"
+                android:id="@+id/card_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/color_on_primary"
+                app:cardCornerRadius="@dimen/keyline_4"
+                app:cardElevation="@dimen/keyline_0"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/keyline_4"
+                    android:src="@drawable/ic_member"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </com.google.android.material.card.MaterialCardView>
+
 
             <LinearLayout
-                android:layout_marginStart="@dimen/keyline_4"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/keyline_4"
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/image"
+                app:layout_constraintStart_toEndOf="@+id/card_image"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <com.google.android.material.textview.MaterialTextView
-                    style="@style/TextAppearance.MaterialComponents.Headline6"
+                    style="@style/TextAppearance.MaterialComponents.Body1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -71,7 +85,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    style="@style/TextAppearance.MaterialComponents.Body1"
+                    style="@style/TextAppearance.MaterialComponents.Caption"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
