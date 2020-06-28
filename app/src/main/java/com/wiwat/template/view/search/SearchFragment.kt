@@ -2,6 +2,7 @@ package com.wiwat.template.view.search
 
 import android.os.Bundle
 import android.view.View
+import androidx.navigation.fragment.findNavController
 import com.wiwat.template.R
 import com.wiwat.template.databinding.FragmentRegisterBinding
 import com.wiwat.template.databinding.FragmentSearchBinding
@@ -18,7 +19,7 @@ class SearchFragment : BindingFragment<FragmentSearchBinding>() {
         super.onViewCreated(view, savedInstanceState)
         binding.recyclerView.withModels {
             for (i in 0 until 10){
-                searchItem { id(i).title("วิวัฒน์ ฟองการ").memberNo("12356789") }
+                searchItem { id(i).title("วิวัฒน์ ฟองการ").memberNo("12356789").onClick { _ -> findNavController().navigate(R.id.action_searchFragment_to_profileFragment) } }
             }
         }
     }

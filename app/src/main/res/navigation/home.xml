@@ -34,7 +34,7 @@
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.wiwat.template.view.add.RegisterFragment"
+        android:name="com.wiwat.template.view.user.RegisterFragment"
         android:label="RegisterFragment"
         tools:layout="@layout/fragment_register">
         <action
@@ -45,7 +45,7 @@
     </fragment>
     <fragment
         android:id="@+id/addPriceFragment"
-        android:name="com.wiwat.template.view.add.AddPriceFragment"
+        android:name="com.wiwat.template.view.user.AddPriceFragment"
         android:label="AddPriceFragment"
         tools:layout="@layout/fragment_add_price">
         <action
@@ -66,6 +66,6 @@
     <fragment
         tools:layout="@layout/fragment_profile"
         android:id="@+id/profileFragment"
-        android:name="com.wiwat.template.view.add.ProfileFragment"
+        android:name="com.wiwat.template.view.user.ProfileFragment"
         android:label="ProfileFragment" />
 </navigation>

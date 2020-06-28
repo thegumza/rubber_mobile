@@ -78,7 +78,7 @@
                     android:layout_marginEnd="@dimen/keyline_2"
                     android:text="@{memberNo}"
                     android:textColor="@color/color_on_background"
-                    app:fontPath="@string/font_medium"
+                    app:fontPath="@string/font_number"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

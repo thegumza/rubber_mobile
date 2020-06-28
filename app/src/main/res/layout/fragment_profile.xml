@@ -24,9 +24,39 @@
             android:text="ข้อมูลสมาชิก"
             android:textColor="@color/color_on_primary"
             app:fontPath="@string/font_medium"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/member_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/TextAppearance.MaterialComponents.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/keyline_5"
+                android:gravity="center"
+                android:text="หมายเลข : "
+                android:textColor="@color/color_on_primary"
+                app:fontPath="@string/font_medium"
+                 />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/title_member_no"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/keyline_5"
+                android:gravity="center"
+                android:text="12345"
+                android:textColor="@color/color_on_primary"
+                app:fontPath="@string/font_number"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title" />
+        </LinearLayout>
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
@@ -37,160 +67,111 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title"
+            app:layout_constraintTop_toBottomOf="@+id/member_layout"
             app:shapeAppearance="@style/ShapeAppearanceOverlay.MaterialCardView.CutTop">
 
-            <androidx.core.widget.NestedScrollView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-                <LinearLayout
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/card_user"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="horizontal"
+                    android:padding="@dimen/keyline_2">
 
-                    <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="match_parent"
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/card_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/keyline_1"
+                        app:cardBackgroundColor="@color/color_on_primary"
+                        app:cardCornerRadius="@dimen/keyline_4"
+                        app:cardElevation="@dimen/keyline_0"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/image"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/keyline_4"
+                            android:src="@drawable/ic_member"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/keyline_4"
-                        android:layout_marginEnd="@dimen/keyline_4"
-                        android:text="@string/title_name"
-                        android:textColor="@color/color_primary"
-                        android:textSize="@dimen/text_size_14"
-                        app:fontPath="@string/font_medium" />
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/nameLayout"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/keyline_4"
-                        android:layout_marginTop="@dimen/keyline_2"
-                        android:layout_marginEnd="@dimen/keyline_4"
-                        android:layout_marginBottom="@dimen/keyline_2"
-                        android:layout_weight="1"
-                        app:boxBackgroundColor="@color/color_on_primary"
-                        app:boxCornerRadiusBottomEnd="@dimen/keyline_4"
-                        app:boxCornerRadiusBottomStart="@dimen/keyline_4"
-                        app:boxCornerRadiusTopEnd="@dimen/keyline_4"
-                        app:boxCornerRadiusTopStart="@dimen/keyline_4"
-                        app:boxStrokeColor="@color/color_primary"
-                        app:hintEnabled="false"
-                        app:hintTextColor="@color/color_primary"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent">
+                        app:layout_constraintStart_toEndOf="@+id/card_image"
+                        app:layout_constraintTop_toTopOf="parent">
 
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/edit_text_name"
+                        <com.google.android.material.textview.MaterialTextView
                             style="@style/TextAppearance.MaterialComponents.Body1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:gravity="start"
-                            android:hint=""
-                            android:inputType="text"
-                            android:singleLine="true"
-                            android:textColor="@color/color_on_background" />
-                    </com.google.android.material.textfield.TextInputLayout>
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/keyline_2"
+                            android:layout_marginEnd="@dimen/keyline_2"
+                            android:text="วิวัฒน์ ฟองการ"
+                            android:textColor="@color/color_on_background"
+                            app:fontPath="@string/font_medium"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                    <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/keyline_4"
-                        android:layout_marginEnd="@dimen/keyline_4"
-                        android:text="@string/title_phone"
-                        android:textColor="@color/color_primary"
-                        android:textSize="@dimen/text_size_14"
-                        app:fontPath="@string/font_medium" />
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/phoneLayout"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/keyline_4"
-                        android:layout_marginTop="@dimen/keyline_2"
-                        android:layout_marginEnd="@dimen/keyline_4"
-                        android:layout_marginBottom="@dimen/keyline_2"
-                        android:layout_weight="1"
-                        app:boxBackgroundColor="@color/color_on_primary"
-                        app:boxCornerRadiusBottomEnd="@dimen/keyline_4"
-                        app:boxCornerRadiusBottomStart="@dimen/keyline_4"
-                        app:boxCornerRadiusTopEnd="@dimen/keyline_4"
-                        app:boxCornerRadiusTopStart="@dimen/keyline_4"
-                        app:boxStrokeColor="@color/color_primary"
-                        app:hintEnabled="false"
-                        app:hintTextColor="@color/color_primary"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/edit_text_phone"
-                            style="@style/TextAppearance.MaterialComponents.Body1"
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/TextAppearance.MaterialComponents.Caption"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:gravity="start"
-                            android:hint=""
-                            android:inputType="number"
-                            android:singleLine="true"
-                            android:textColor="@color/color_on_background" />
-                    </com.google.android.material.textfield.TextInputLayout>
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/keyline_2"
+                            android:layout_marginTop="@dimen/keyline_2"
+                            android:layout_marginEnd="@dimen/keyline_2"
+                            android:text="57/414 ประดิพัทธ์ 0874779387"
+                            android:textColor="@color/color_on_background"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </LinearLayout>
 
-                    <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/keyline_4"
-                        android:layout_marginEnd="@dimen/keyline_4"
-                        android:text="@string/title_address"
-                        android:textColor="@color/color_primary"
-                        android:textSize="@dimen/text_size_14"
-                        app:fontPath="@string/font_medium" />
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/addressLayout"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/keyline_4"
-                        android:layout_marginTop="@dimen/keyline_2"
-                        android:layout_marginEnd="@dimen/keyline_4"
-                        android:layout_marginBottom="@dimen/keyline_2"
-                        android:layout_weight="1"
-                        app:boxBackgroundColor="@color/color_on_primary"
-                        app:boxCornerRadiusBottomEnd="@dimen/keyline_4"
-                        app:boxCornerRadiusBottomStart="@dimen/keyline_4"
-                        app:boxCornerRadiusTopEnd="@dimen/keyline_4"
-                        app:boxCornerRadiusTopStart="@dimen/keyline_4"
-                        app:boxStrokeColor="@color/color_primary"
-                        app:hintEnabled="false"
-                        app:hintTextColor="@color/color_primary"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent">
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/edit_text_address"
-                            style="@style/TextAppearance.MaterialComponents.Body1"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="start"
-                            android:hint=""
-                            android:inputType="number"
-                            android:singleLine="true"
-                            android:textColor="@color/color_on_background" />
-                    </com.google.android.material.textfield.TextInputLayout>
-                </LinearLayout>
-            </androidx.core.widget.NestedScrollView>
+                <com.airbnb.epoxy.EpoxyRecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
 
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/button_submit"
+            android:id="@+id/card_bottom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/keyline_4"
+            android:elevation="@dimen/keyline_4"
+            app:cardCornerRadius="@dimen/keyline_4"
             app:cardElevation="@dimen/keyline_4"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:shapeAppearance="@style/ShapeAppearanceOverlay.MaterialCardView.CutTop">
+            app:layout_constraintStart_toStartOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -198,12 +179,13 @@
                 android:layout_margin="@dimen/keyline_4">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="match_parent"
+                    style="@style/TextAppearance.MaterialComponents.Body1"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/keyline_2"
                     android:gravity="center"
-                    android:text="@string/title_add_member"
+                    android:text="เพิ่มรายการใหม่"
                     android:textColor="@color/color_on_primary"
-                    android:textSize="@dimen/text_size_20"
                     app:fontPath="@string/font_medium"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

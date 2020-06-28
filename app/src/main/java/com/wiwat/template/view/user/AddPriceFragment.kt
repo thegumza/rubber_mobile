@@ -1,4 +1,4 @@
-package com.wiwat.template.view.add
+package com.wiwat.template.view.user
 
 import android.os.Bundle
 import android.view.View

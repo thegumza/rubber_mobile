@@ -813,7 +813,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:drawablePadding="@dimen/keyline_2"
-                    android:drawableTint="@color/color_on_primary"
                     android:gravity="center"
                     android:text="บันทึก"
                     android:textColor="@color/color_on_primary"
