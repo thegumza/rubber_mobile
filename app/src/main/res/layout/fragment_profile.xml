@@ -184,7 +184,7 @@
                     android:layout_height="wrap_content"
                     android:drawablePadding="@dimen/keyline_2"
                     android:gravity="center"
-                    android:text="เพิ่มรายการใหม่"
+                    android:text="สร้างรายการใหม่"
                     android:textColor="@color/color_on_primary"
                     app:fontPath="@string/font_medium"
                     app:layout_constraintEnd_toEndOf="parent"
